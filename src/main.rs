@@ -1,7 +1,7 @@
 use anyhow::Result;
 use std::{fmt::Debug, fs, time::SystemTime};
 
-use chrono::{DateTime, Datelike, Local, NaiveDate};
+use chrono::{DateTime, Local, NaiveDate};
 use clap::Parser;
 use humanize_duration::prelude::DurationExt;
 
