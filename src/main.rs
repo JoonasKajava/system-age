@@ -27,7 +27,7 @@ fn main() -> Result<()> {
     };
 
     if args.elapsed {
-        let elapsed = (only_date(Local::now().date_naive()) - date).to_std()?;
+        let elapsed = (Local::now().date_naive() - date).to_std()?;
         date_string.push_str(&format!(
             " ({} ago)",
             elapsed.human(humanize_duration::Truncate::Day)
@@ -47,7 +47,3 @@ fn get_system_age() -> Result<SystemTime> {
     Ok(created)
 }
 
-fn only_date(date: NaiveDate) -> NaiveDate {
-    NaiveDate::from_ymd_opt(date.year(), date.month0(), date.day0())
-        .expect("this should always work")
-}
