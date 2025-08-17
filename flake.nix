@@ -30,6 +30,11 @@
           version = "0.1.0";
           cargoLock.lockFile = ./Cargo.lock;
           src = nixpkgs.lib.cleanSource ./.;
+          meta = {
+            mainProgram = "system-age";
+            license = pkgs.lib.licenses.mit;
+            maintainers = [ "Joonas Kajava" ];
+          };
         };
     });
 
